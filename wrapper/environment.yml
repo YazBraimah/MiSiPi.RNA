@@ -1,0 +1,16 @@
+name: misipi_rna
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - nodefaults
+
+dependencies:
+  - python=3.12
+  - r-base=4.4
+  - r-biocmanager
+  - r-devtools
+  - r-tidyverse
+  - viennarna
+  - pandoc
+  - pip
