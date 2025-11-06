@@ -4,6 +4,21 @@
   <img alt="MiSiPi R Package Logo" src="https://user-images.githubusercontent.com/63005660/236967995-82baabed-6ebf-45e1-a2d2-7e5ab27451a2.png">
 </picture>
 
+**Note: this forked repository is effectively identical to the main repo, however it inclues a Python wrapper script in the "wrapper" directory that alows command line execution. The only edits in running the main function is to include an output directory with the `misipi_rna` function, which will reside within the `misipi_output` folder. A minimal list of required conda packages is in the `environment.yml` file; this forked repo will need to be installed within the conda environment's R installation:
+
+```
+install.packages("devtools")
+
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+  
+devtools::install_github("YazBraimah/MiSiPi.RNA")
+
+library(MiSiPi.RNA)
+
+```
+---
+
 For more details about the package or to cite, please visit https://www.biorxiv.org/content/10.1101/2023.05.07.539760v1.
 
 ## MiSiPi.RNA
@@ -86,10 +101,10 @@ vars <- set_vars(
 )
 
 # run all methods
-misipi_rna(vars)
+misipi_rna(vars, outdir_name = "OUTPUT")
 
 # run only for siRNAs
-misipi_rna(vars, method = "siRNA")
+misipi_rna(vars, method = "siRNA", outdir_name = "OUTPUT")
 
 ```
 
